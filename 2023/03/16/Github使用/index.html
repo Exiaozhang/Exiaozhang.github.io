@@ -27,8 +27,23 @@
 <meta property="og:description" content="常用的命令  克隆仓库  1$ git clone &lt;repo&gt; &lt;directory&gt;  repo:Git 仓库 directory:本地目录">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/git.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/git01.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice00.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice01.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice02.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice03.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice04.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice05.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice06.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice07.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice08.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice09.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice11.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice12.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/14.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/15.png">
 <meta property="article:published_time" content="2023-03-16T11:33:42.000Z">
-<meta property="article:modified_time" content="2023-03-18T12:31:33.002Z">
+<meta property="article:modified_time" content="2023-03-21T05:29:20.904Z">
 <meta property="article:author" content="Exiaozhang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/git.png">
@@ -205,7 +220,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-03-18 20:31:33" itemprop="dateModified" datetime="2023-03-18T20:31:33+08:00">2023-03-18</time>
+      <time title="修改时间：2023-03-21 13:29:20" itemprop="dateModified" datetime="2023-03-21T13:29:20+08:00">2023-03-21</time>
     </span>
 
   
@@ -284,9 +299,12 @@
 <li>hard 参数撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交</li>
 </ul>
 </li>
-<li><p><em>提交代码</em>*</p>
-</li>
+<li><p>分支相关</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">\<span class="comment">#列出本地所有分支</span></span><br><span class="line">git branch</span><br><span class="line">\<span class="comment">#列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line">\<span class="comment">#新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line">\<span class="comment">#新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b 分支名</span><br><span class="line">\<span class="comment">#合并指定分支到当前分支</span></span><br><span class="line">git merge 分支名</span><br><span class="line">\<span class="comment">#删除分支</span></span><br><span class="line">git branch -d 分支名</span><br><span class="line">\<span class="comment">#删除远程分支</span></span><br><span class="line">git push origin --delete 分支名</span><br><span class="line">git branch -dr 分支名</span><br></pre></td></tr></table></figure></li>
 </ul>
+<p><strong>提交代码</strong></p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/git01.png" class="" title="git图解">
+
 <p>向Github提交代码的两种情况</p>
 <ol>
 <li><p>本地没有 Git 仓库，将远程仓库clone到本地</p>
@@ -300,6 +318,46 @@
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin main</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>  强调:在向远程仓库提交代码的时候，一定要先进行pull操作，再进行push操作，防止本地仓库与远程仓库不同步导致冲突的问题，尤其是第二种提交代码的情况，很容易就出现问题。</p>
+<p><strong>实际使用</strong></p>
+<p>转载自<a target="_blank" rel="noopener" href="https://blog.csdn.net/nrsc272420199/article/details/85219097">原文</a><br>1.远程仓库只有一个master分支的情况<br>   需要用到的命令<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git pull----------------从远程仓库拉取代码到本地</span><br><span class="line">git stash---------------将你修改后的代码存储到本地(一个栈结构)--&gt;一般会在git pull 拉取代码失败时使用</span><br><span class="line">git stash pop-----------将你stash到本地的代码与重新git pull下的代码合并</span><br><span class="line">git add XXX-------------将XXX文件加入到暂存区</span><br><span class="line">git commit -m <span class="string">&quot;注释&quot;</span>----将暂存区的文件提交到本地仓库</span><br><span class="line">git push----------------将本地仓库的内容推送到远程仓库</span><br></pre></td></tr></table></figure><br>2.实际场景<br>假设开发者A和开发者B都刚刚从远程仓库checkout了一份代码到本地.</p>
+<p>A:<br>首先开发者A在README.md文件中进行了如下修改:</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice00.png" class="" title="git图解">
+<p>然后将修改内容按照如下方式提交到远程仓库:</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice01.png" class="" title="git图解">
+
+<p>B:<br>   开发者B此时也要开发代码了,正常来讲,如果开发者B在开发完一个功能需要提交代码之前,肯定要git pull一下代码.比如说开发者B在README.md的第三行里增加了一句话,然后他去git pull代码,结果如下:</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice02.png" class="" title="git图解">
+
+<p><strong>★注意点1★–git监控变化的单位是文件</strong><br>   我不知道大家在这里会不会疑惑,反正我疑惑过很久,明明我在Git Bash里改动的是第二行,在Idea里改动的是第三行,不是说git监测的是变化吗?这里怎么就pull不下来呢?其实git所谓的监控变化,监控的单位是文件,也就是说假如其他开发者改动了XXX文件,并且同步到远程库了,你即使在XXX文件里改动了一个标点,加了一个空格,都无法pull成功.<br>   git pull不成功时,你就需要使用git stash命令了,具体解决方式如下:</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice03.png" class="" title="git图解">
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice04.png" class="" title="git图解">
+
+<p><strong>★注意点2★–git pull可以把所有你上次push后没操作的文件pull下来</strong><br>A:<br>  接着上面的栗子,假设Git Bash用户同步了服务端的代码,并且在没跟IDEA用户商量的情况下,擅自修改了IDEA用户的代码,如下:</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice05.png" class="" title="git图解">
+<p>  并且Git Bash用户还创建了一个新的文件,如下:</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice06.png" class="" title="git图解">
+
+<p>B:<br>  开发者B如果没有进行开发,或者进行了其他文件的开发,而未对README.md文件进行操作,直接git pull,效果见下图.可以发现,git pull可以把所有你上次push后没操作的文件pull下来,并将你本地的代码变成和远程仓库一样的代码.</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice07.png" class="" title="git图解">
+<p>所以奉在pull代码的时候一定要多注意看一下代码有没有被改动过.</p>
+<p>3.使用idea的Update Project代替git pull + git stash +git stash pop</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice08.png" class="" title="git图解">
+<p>然后点击一下OK,就会弹出如下页面:</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice09.png" class="" title="git图解">
+<p>   然后双击一下有冲突的文件之后,就会弹出如下页面,自我感觉在这个界面里进行冲突解决,要比注意点1中第一个图,那种解决方式爽一些.</p>
+
+<p>并且解决完冲突后,立刻会弹出如下提示:</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice11.png" class="" title="git图解">
+<p>点开提示之后,你就可以看到哪些文件修改了,哪些文件是新增的,而且你肯定会想去看看你原来操作过的文件有没有被updated过,从而避免注意点2中提到的情况.</p>
+<img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/practice12.png" class="" title="git图解">
+
+<p><strong>git merge 相关</strong></p>
+<ol>
+<li><p>在分支之后未对代码修改</p>
+ <img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/14.png" class="" title="git图解"></li>
+<li><p>在分支之对代码修改</p>
+ <img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/15.png" class="" title="git图解"></li>
+</ol>
 
     </div>
 
