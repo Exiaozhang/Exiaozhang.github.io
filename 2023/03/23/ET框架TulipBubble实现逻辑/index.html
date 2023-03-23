@@ -19,28 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="The bird is a word!!!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+    <meta name="description" content="登录注册逻辑 UI有关脚本 UIEventType.cs TulipLobbyFactory.cs TulipLobbyComponent.cs  UIEventType.cs：注册创建UI的事件去调用TulipLobbyFactoryTulipLobbyFactory.cs：创建UI的事件给UI添加TulipLobbyComponent组件TulipLobbyComponent.cs：获取UI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ET框架TulipBubble实现逻辑">
+<meta property="og:url" content="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/index.html">
 <meta property="og:site_name" content="Exiaozhang&#96;s Blog">
-<meta property="og:description" content="The bird is a word!!!">
+<meta property="og:description" content="登录注册逻辑 UI有关脚本 UIEventType.cs TulipLobbyFactory.cs TulipLobbyComponent.cs  UIEventType.cs：注册创建UI的事件去调用TulipLobbyFactoryTulipLobbyFactory.cs：创建UI的事件给UI添加TulipLobbyComponent组件TulipLobbyComponent.cs：获取UI">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-18T12:47:51.000Z">
-<meta property="article:modified_time" content="2023-03-18T12:48:39.008Z">
+<meta property="og:image" content="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/2023-03-23-21-05-52-image.png">
+<meta property="article:published_time" content="2023-03-23T11:54:39.000Z">
+<meta property="article:modified_time" content="2023-03-23T13:09:10.181Z">
 <meta property="article:author" content="Exiaozhang">
+<meta property="article:tag" content="ET框架">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/2023-03-23-21-05-52-image.png">
 
 
-<link rel="canonical" href="http://example.com/tags/">
+<link rel="canonical" href="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://example.com/tags/index.html","path":"tags/index.html","title":"tags"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/","path":"2023/03/23/ET框架TulipBubble实现逻辑/","title":"ET框架TulipBubble实现逻辑"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>tags | Exiaozhang`s Blog
-</title>
+<title>ET框架TulipBubble实现逻辑 | Exiaozhang`s Blog</title>
   
 
 
@@ -157,41 +159,127 @@
 
     </div>
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
 
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+  
 
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
 
-<div class="post-meta-container">
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Exiaozhang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Exiaozhang`s Blog">
+      <meta itemprop="description" content="The bird is a word!!!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ET框架TulipBubble实现逻辑 | Exiaozhang`s Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ET框架TulipBubble实现逻辑
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-03-23 19:54:39 / 修改时间：21:09:10" itemprop="dateCreated datePublished" datetime="2023-03-23T19:54:39+08:00">2023-03-23</time>
+    </span>
+
+  
 </div>
 
-</header>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body"><div class="tag-cloud">
-  <div class="tag-cloud-title">
-    目前共计 5 个标签
-  </div>
-  <div class="tag-cloud-tags">
-    <a href="/tags/ET%E6%A1%86%E6%9E%B6/" style="font-size: 12px;" class="tag-cloud-0">ET框架</a> <a href="/tags/%E5%86%B7%E6%88%98/" style="font-size: 12px;" class="tag-cloud-0">冷战</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 12px;" class="tag-cloud-0">历史</a> <a href="/tags/%E7%BE%8E%E5%9B%BD/" style="font-size: 12px;" class="tag-cloud-0">美国</a> <a href="/tags/%E8%8B%8F%E8%81%94/" style="font-size: 12px;" class="tag-cloud-0">苏联</a>
-  </div>
-</div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <ul>
+<li><strong>登录注册逻辑</strong><ul>
+<li>UI有关脚本<blockquote>
+<p>UIEventType.cs</p>
+<p>TulipLobbyFactory.cs</p>
+<p>TulipLobbyComponent.cs</p>
+</blockquote>
+UIEventType.cs：注册创建UI的事件去调用TulipLobbyFactoryTulipLobbyFactory.cs：创建UI的事件给UI添加TulipLobbyComponent组件TulipLobbyComponent.cs：获取UI中的信息，给登录/注册按钮添加事件</li>
+</ul>
+<span id="more"></span>
 
-      </div>
-      
-      
-      
+<ul>
+<li>网络<img title src="/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/2023-03-23-21-05-52-image.png" alt data-align="center">
+
+有关脚本<blockquote>
+<ul>
+<li><p>前端</p>
+<p>TulipHelper.cs</p>
+</li>
+<li><p>后端</p>
+<ul>
+<li><p>Realm</p>
+<p>A0002_LoginHandler.cs</p>
+<p>A0001_RegisterHandler.cs</p>
+</li>
+<li><p>Gate</p>
+<p>A0006_GetLoginKey.cs</p>
+<p>A0003_LoginGateHandler.cs</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+TulipHelper.cs：不多说，向Realm发送登录{account,password}和注册请求{account,password}；发送登录后接收到Realm服的Gate服ip地址和Key后向Gate服发送登录请求{key}A0002_LoginHandler.cs：接收C登录请求{account,password}判断账号密码是否合法如果合法发给G{UserId}请求Key回复C{GateIP,Key}A0006_GetLoginKey.cs：接收R{UserID}利用UserID在SeesionKeyComponent中绑定UserId和Key回复R{Key}A0001_RegisterHandler.cs:接收C注册请求{account,password}判断账号是否合法如果合法将AccountInfo和UserInfo保存到数据库回复C{注册成功}A0003_LoginGateHandler.cs：接收C登录请求{key}验证Key合法性如果合法将UserId和Key解绑使用UserId创建User添加User到UserComponentSession添加SessionUserComponent 绑定Seession和UserSession添加MailBoxComponent 通过MailBox进行actor通信设置User的参数GateAppID，GateSessionID，ActorID回复C{UserID}</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ET%E6%A1%86%E6%9E%B6/" rel="tag"># ET框架</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/03/20/ET%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E7%90%86%E8%A7%A3/" rel="prev" title="ET框架初步理解">
+                  <i class="fa fa-chevron-left"></i> ET框架初步理解
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
     <div class="comments utterances-container"></div>
@@ -208,11 +296,11 @@
     </label>
     <select class="lang-select" data-canonical="" aria-label="选择语言">
       
-        <option value="zh-CN" data-href="/tags/index.html" selected="">
+        <option value="zh-CN" data-href="/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/tags/index.html" selected="">
+        <option value="en" data-href="/en/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/" selected="">
           English
         </option>
       
