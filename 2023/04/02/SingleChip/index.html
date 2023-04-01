@@ -19,29 +19,39 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="登录注册逻辑  UI有关脚本 UIEventType.cs TulipLobbyFactory.cs TulipLobbyComponent.cs  UIEventType.cs：注册创建UI的事件去调用TulipLobbyFactoryTulipLobbyFactory.cs：创建UI的事件给UI添加TulipLobbyComponent组件TulipLobbyComponent.cs：获取U">
+    <meta name="description" content="第一次实验 实验基本要求">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ET框架TulipBubble实现逻辑">
-<meta property="og:url" content="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/index.html">
+<meta property="og:title" content="嵌入式与单片机实验课答案">
+<meta property="og:url" content="http://example.com/2023/04/02/SingleChip/index.html">
 <meta property="og:site_name" content="Exiaozhang&#96;s Blog">
-<meta property="og:description" content="登录注册逻辑  UI有关脚本 UIEventType.cs TulipLobbyFactory.cs TulipLobbyComponent.cs  UIEventType.cs：注册创建UI的事件去调用TulipLobbyFactoryTulipLobbyFactory.cs：创建UI的事件给UI添加TulipLobbyComponent组件TulipLobbyComponent.cs：获取U">
+<meta property="og:description" content="第一次实验 实验基本要求">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/2023-03-23-21-05-52-image.png">
-<meta property="article:published_time" content="2023-03-23T11:54:39.000Z">
-<meta property="article:modified_time" content="2023-03-23T13:26:44.861Z">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/2023-04-02-02-05-40-image.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/53dd30183091b0bb68dfbdb15031cc2dfa2e0306.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/4c9eeaf452c81e4203aab3ab35f203b530e08202.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/426941f16f054370a2e48c0b9334b919349fd85a.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/d5a14db6ef5b8ee6e4e4628c1290b38445a7835e.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/57037c8bea42c86053227fe549874b419653b56c.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/426941f16f054370a2e48c0b9334b919349fd85a.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/54c588817fcd205435a974f1d8077220d5485bf4.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/62d506ea99c99e2d95a5c5d0b00410291b1a7de4.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/ba71358b9ca3c9a533af1de889672b443827b2b5.png">
+<meta property="og:image" content="http://example.com/2023/04/02/SingleChip/08a01404c19e5459d57c8e384f5eaf22869a43eb.png">
+<meta property="article:published_time" content="2023-04-01T18:02:14.000Z">
+<meta property="article:modified_time" content="2023-04-01T18:43:54.735Z">
 <meta property="article:author" content="Exiaozhang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/2023-03-23-21-05-52-image.png">
+<meta name="twitter:image" content="http://example.com/2023/04/02/SingleChip/2023-04-02-02-05-40-image.png">
 
 
-<link rel="canonical" href="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/">
+<link rel="canonical" href="http://example.com/2023/04/02/SingleChip/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/","path":"2023/03/23/ET框架TulipBubble实现逻辑/","title":"ET框架TulipBubble实现逻辑"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/04/02/SingleChip/","path":"2023/04/02/SingleChip/","title":"嵌入式与单片机实验课答案"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>ET框架TulipBubble实现逻辑 | Exiaozhang`s Blog</title>
+<title>嵌入式与单片机实验课答案 | Exiaozhang`s Blog</title>
   
 
 
@@ -169,7 +179,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/02/SingleChip/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -182,12 +192,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="ET框架TulipBubble实现逻辑 | Exiaozhang`s Blog">
+      <meta itemprop="name" content="嵌入式与单片机实验课答案 | Exiaozhang`s Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ET框架TulipBubble实现逻辑
+          嵌入式与单片机实验课答案
         </h1>
 
         <div class="post-meta-container">
@@ -199,7 +209,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-03-23 19:54:39 / 修改时间：21:26:44" itemprop="dateCreated datePublished" datetime="2023-03-23T19:54:39+08:00">2023-03-23</time>
+      <time title="创建时间：2023-04-02 02:02:14 / 修改时间：02:43:54" itemprop="dateCreated datePublished" datetime="2023-04-02T02:02:14+08:00">2023-04-02</time>
     </span>
 
   
@@ -212,81 +222,62 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <ul>
-<li><p><strong>登录注册逻辑</strong></p>
-<ul>
-<li>UI有关脚本<blockquote>
-<p>UIEventType.cs</p>
-<p>TulipLobbyFactory.cs</p>
-<p>TulipLobbyComponent.cs</p>
-</blockquote>
-UIEventType.cs：注册创建UI的事件去调用TulipLobbyFactoryTulipLobbyFactory.cs：创建UI的事件给UI添加TulipLobbyComponent组件TulipLobbyComponent.cs：获取UI中的信息，给登录/注册按钮添加事件</li>
-</ul>
+        <ol>
+<li>第一次实验<ul>
+<li><p>实验基本要求</p>
+<p><img src="/2023/04/02/SingleChip/2023-04-02-02-05-40-image.png"></p>
 <span id="more"></span>
 
-<ul>
-<li><p>网络</p>
-<img title src="/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/2023-03-23-21-05-52-image.png" alt data-align="center">
+<p>创建项目文件</p>
+<p><img src="/2023/04/02/SingleChip/53dd30183091b0bb68dfbdb15031cc2dfa2e0306.png" alt="Screenshot from 2023-04-02 00-47-22.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> Project //在用户目录下（~）创建Project文件夹</span><br><span class="line"><span class="built_in">cd</span> Project/  </span><br><span class="line"><span class="built_in">mkdir</span> Homework //在Project目录下创建Homework文件夹</span><br><span class="line"><span class="built_in">cd</span> Homework/</span><br><span class="line"><span class="built_in">mkdir</span> 10 //此时实验的项目地址</span><br><span class="line"><span class="built_in">cd</span> 10</span><br></pre></td></tr></table></figure>
 
-<p>有关脚本</p>
-<blockquote>
-<ul>
-<li><p>前端</p>
-<p>TulipHelper.cs</p>
-</li>
-<li><p>后端</p>
-<ul>
-<li><p>Realm</p>
-<p>A0002_LoginHandler.cs</p>
-<p>A0001_RegisterHandler.cs</p>
-</li>
-<li><p>Gate</p>
-<p>A0006_GetLoginKey.cs</p>
-<p>A0003_LoginGateHandler.cs</p>
-</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<p>TulipHelper.cs：不多说，向Realm发送登录{account,password}和注册请求{account,password}；发送登录后接收到Realm服的Gate服ip地址和Key后向Gate服发送登录请求{key}</p>
-  <br>
+<p>   </p>
+<p>使用vim创建mean.sh文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim mean.sh </span><br></pre></td></tr></table></figure>
 
-<p>A0002_LoginHandler.cs：</p>
-<blockquote>
-<p>接收C登录请求{account,password}</p>
-<p>判断账号密码是否合法</p>
-<p>如果合法发给G{UserId}请求Key</p>
-<p>回复C{GateIP,Key}</p>
-</blockquote>
-<p>A0006_GetLoginKey.cs：</p>
-<blockquote>
-<p>接收R{UserID}</p>
-<p>利用UserID在SeesionKeyComponent中绑定UserId和Key</p>
-<p>回复R{Key}</p>
-</blockquote>
-<p>A0001_RegisterHandler.cs:</p>
-<blockquote>
-<p>接收C注册请求{account,password}</p>
-<p>判断账号是否合法</p>
-<p>如果合法将AccountInfo和UserInfo保存到数据库</p>
-<p>回复C{注册成功}</p>
-</blockquote>
-<p>A0003_LoginGateHandler.cs：</p>
-<blockquote>
-<p>接收C登录请求{key}</p>
-<p>验证Key合法性</p>
-<p>如果合法将UserId和Key解绑</p>
-<p>使用UserId创建User</p>
-<p>添加User到UserComponent</p>
-<p>Session添加SessionUserComponent 绑定Seession和User</p>
-<p>Session添加MailBoxComponent 通过MailBox进行actor通信</p>
-<p>设置User的参数GateAppID，GateSessionID，ActorID</p>
-<p>回复C{UserID}</p>
-</blockquote>
+<p>如果出现这种情况<br><img src="/2023/04/02/SingleChip/4c9eeaf452c81e4203aab3ab35f203b530e08202.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br></pre></td></tr></table></figure>
+
+<p>安装完后在执行vim mean.sh，执行完后界面为</p>
+<p><img src="/2023/04/02/SingleChip/426941f16f054370a2e48c0b9334b919349fd85a.png" alt="Screenshot from 2023-04-02 01-14-51.png"></p>
+<p>  按i键进入插入模式</p>
+<p>输入代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">total=0</span><br><span class="line">count=0</span><br><span class="line">inputfile=<span class="string">&#x27;1000ValuesCalcMean&#x27;</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line;<span class="keyword">do</span></span><br><span class="line">    total=$((total+line)）</span><br><span class="line">    count=$[<span class="variable">$count</span>+<span class="number">1</span>]</span><br><span class="line">done &lt; <span class="variable">$inputfile</span></span><br><span class="line">echo $[<span class="variable">$total</span>/<span class="variable">$count</span>] &gt; mean_result_学号_名字.txt</span><br></pre></td></tr></table></figure>
+
+<p>    <img src="/2023/04/02/SingleChip/d5a14db6ef5b8ee6e4e4628c1290b38445a7835e.png"></p>
+<p>输入完后按esc键退出插入模式，输入:wq退出vim</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 mean.sh //给mean.sh权限</span><br><span class="line">./mean.sh              //执行mean.sh</span><br></pre></td></tr></table></figure>
+
+<p>执行完后10文件夹内出现 mean_result_学号_名字.txt 文件</p>
+<p><img src="/2023/04/02/SingleChip/57037c8bea42c86053227fe549874b419653b56c.png"></p>
+<p>内容为 平均数</p>
+<p>创建ReadMe.md</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ReadMe.md</span><br></pre></td></tr></table></figure>
+
+<p>进入后直接:wq退出</p>
+<p><img src="/2023/04/02/SingleChip/426941f16f054370a2e48c0b9334b919349fd85a.png" alt="Screenshot from 2023-04-02 01-14-51.png"></p>
+<p>看到文件夹内多出了文件ReaMe.md，双击</p>
+<p><img src="/2023/04/02/SingleChip/54c588817fcd205435a974f1d8077220d5485bf4.png" alt="Screenshot from 2023-04-02 01-16-19.png"></p>
+<p>在文本编辑器内写入以下示例后保存</p>
+<p><img src="/2023/04/02/SingleChip/62d506ea99c99e2d95a5c5d0b00410291b1a7de4.png" alt="Screenshot from 2023-04-02 01-21-06.png"></p>
+<p>打包成.tgz格式的压缩包(别忘了传图片)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -czvf 压缩包的名字.tgz 你要压缩的第一个文件 第二个 ....</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/04/02/SingleChip/ba71358b9ca3c9a533af1de889672b443827b2b5.png" alt="Screenshot from 2023-04-02 01-22-26.png"></p>
+<p>进入学习通上交即可</p>
+</li>
+<li><p>进阶要求</p>
+<p>代码修改为</p>
+<p><img src="/2023/04/02/SingleChip/08a01404c19e5459d57c8e384f5eaf22869a43eb.png" alt="Screenshot from 2023-04-02 01-54-33.png"></p>
+<p>执行命令改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./mean.sh 1000ValuesCalcMean</span><br></pre></td></tr></table></figure>
+
+<p>执行完后压缩上交即可(别忘了在ReadMe中说明使用了进阶要求)</p>
 </li>
 </ul>
 </li>
-</ul>
+</ol>
 
     </div>
 
@@ -300,14 +291,11 @@ UIEventType.cs：注册创建UI的事件去调用TulipLobbyFactoryTulipLobbyFact
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/03/20/ET%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E7%90%86%E8%A7%A3/" rel="prev" title="ET框架初步理解">
-                  <i class="fa fa-chevron-left"></i> ET框架初步理解
+                <a href="/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/" rel="prev" title="ET框架TulipBubble实现逻辑">
+                  <i class="fa fa-chevron-left"></i> ET框架TulipBubble实现逻辑
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/04/02/SingleChip/" rel="next" title="嵌入式与单片机实验课答案">
-                  嵌入式与单片机实验课答案 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -333,11 +321,11 @@ UIEventType.cs：注册创建UI的事件去调用TulipLobbyFactoryTulipLobbyFact
     </label>
     <select class="lang-select" data-canonical="" aria-label="选择语言">
       
-        <option value="zh-CN" data-href="/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/" selected="">
+        <option value="zh-CN" data-href="/2023/04/02/SingleChip/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/2023/03/23/ET%E6%A1%86%E6%9E%B6TulipBubble%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91/" selected="">
+        <option value="en" data-href="/en/2023/04/02/SingleChip/" selected="">
           English
         </option>
       
