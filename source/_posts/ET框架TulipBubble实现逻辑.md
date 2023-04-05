@@ -47,10 +47,10 @@ tags:
     >     A0006_GetLoginKey.cs
     >     
     >     A0003_LoginGateHandler.cs
-
+    
     TulipHelper.cs：不多说，向Realm发送登录{account,password}和注册请求{account,password}；发送登录后接收到Realm服的Gate服ip地址和Key后向Gate服发送登录请求{key}
     
-      <br/>
+    <br/>
     
     A0002_LoginHandler.cs：
     
@@ -62,8 +62,6 @@ tags:
     > 
     > 回复C{GateIP,Key}
     
-    
-    
     A0006_GetLoginKey.cs：
     
     > 接收R{UserID}
@@ -71,8 +69,6 @@ tags:
     > 利用UserID在SeesionKeyComponent中绑定UserId和Key
     > 
     > 回复R{Key}
-    
-    
     
     A0001_RegisterHandler.cs:
     
@@ -83,9 +79,7 @@ tags:
     > 如果合法将AccountInfo和UserInfo保存到数据库
     > 
     > 回复C{注册成功}
-    
-    
-    
+
     A0003_LoginGateHandler.cs：
     
     > 接收C登录请求{key}
