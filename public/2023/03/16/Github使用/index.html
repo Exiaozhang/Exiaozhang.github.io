@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="常用的命令  克隆仓库1$ git clone &lt;repo&gt; &lt;directory&gt;   repo:Git 仓库  directory:本地目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github使用">
+<meta property="og:url" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Exiaozhang&#96;s Blog">
+<meta property="og:description" content="常用的命令  克隆仓库1$ git clone &lt;repo&gt; &lt;directory&gt;   repo:Git 仓库  directory:本地目录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/fc261c3347d67a16ae3d5eef1b72182071954565.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/86324066a24e3eb32af8305f91c0a064582ae9d5.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/3aa70b0531dc3e2625c09c1ef8eac0078a29f54e.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/265bf46b38778fb7476094dda85d00debb635e85.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/5a1f2bfbce2c6557b2d3442934c0a92b8a606944.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/578439ae227066f02d1319f645f09b0567c46bd6.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/62a3a7a6fbde2da426ced06d782dbd6ee43fb5c4.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/2ac963f71072ecd1cc7f56f9153107153b737a36.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/c96a2283efc6cc31030410ff42e59ac41209443a.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/51204e17ea43f7a1992ea9abbf9ecb48768694fa.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/5ea18123f9a50a08ca1fd5562c479b4aa184a2e4.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/6aa5405ba7ffbe9c8760c5891854c1041e688d10.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/7e1e6ca628c6bcc92afce94e8ce7a0cd9a491ac1.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/089c68368fd64dc9463fcbb493992b46998e45ad.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/03%20github%e4%bd%bf%e7%94%a8%20practice12.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/c81d9e95a6974e43bb3d62b5ce7029b0c535f29d.png">
+<meta property="og:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/69a4adad5fa74c60aa7fdd3ac358f9bb718b3b4b.png">
+<meta property="article:published_time" content="2023-03-16T11:33:42.000Z">
+<meta property="article:modified_time" content="2023-03-23T11:59:59.620Z">
+<meta property="article:author" content="Exiaozhang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/fc261c3347d67a16ae3d5eef1b72182071954565.png">
+
+
+<link rel="canonical" href="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/","path":"2023/03/16/Github使用/","title":"Github使用"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Github使用 | Exiaozhang`s Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Exiaozhang`s Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">拖着尸体上大学</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Exiaozhang"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Exiaozhang</p>
+  <div class="site-description" itemprop="description">The bird is a word!!!</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/exiaozhang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;exiaozhang" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2497179110@qq.com" title="E-Mail → mailto:2497179110@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/16/Github%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Exiaozhang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Exiaozhang`s Blog">
+      <meta itemprop="description" content="The bird is a word!!!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Github使用 | Exiaozhang`s Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Github使用
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-03-16 19:33:42" itemprop="dateCreated datePublished" datetime="2023-03-16T19:33:42+08:00">2023-03-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-03-23 19:59:59" itemprop="dateModified" datetime="2023-03-23T19:59:59+08:00">2023-03-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/fc261c3347d67a16ae3d5eef1b72182071954565.png"></p>
+<p><strong>常用的命令</strong></p>
+<ol>
+<li>克隆仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> &lt;repo&gt; &lt;directory&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>repo:Git 仓库</p>
+</li>
+<li><p>directory:本地目录</p>
+</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+
+<ul>
+<li><p>初始化仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init &lt;directory&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>directory:本地目录</li>
+</ul>
+</li>
+<li><p>查看仓库状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure></li>
+<li><p>添加文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git add [file1] [file2] ...</span><br><span class="line">$ git add [<span class="built_in">dir</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>file:文件</li>
+<li>dir:文件夹</li>
+</ul>
+</li>
+<li><p>删除文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">rm</span> [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]] [--] [&lt;pathspec&gt;…​]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>f:覆盖最新的检测</li>
+<li>n/dry-run:不在硬盘上删除文件，只在仓库中删除文件</li>
+<li>r:递归删除文件夹</li>
+<li>cached:使用此选项仅从索引中取消和删除路径。工作树文件，无论是否修改，都将保持不变</li>
+<li>ignore-unmatch:即使没有匹配的文件，也会以0状态退出</li>
+<li>q/quiet:不打印输出</li>
+<li>pathspec:要删除的文件</li>
+</ul>
+</li>
+<li><p>移动文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">mv</span> [-v] [-f] [-n] [-k] &lt;<span class="built_in">source</span>&gt; &lt;destination&gt;</span><br><span class="line">$ git <span class="built_in">mv</span> [-v] [-f] [-n] [-k] &lt;<span class="built_in">source</span>&gt; ... &lt;destination directory&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>v/verbose:打印被移除文件的名称</li>
+<li>f/force:强制覆盖目标文件</li>
+<li>n/dry-run:只说明会做什么</li>
+<li>k:跳过重命名</li>
+</ul>
+</li>
+<li><p>比较状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git diff [file] 显示暂存区和工作区的差异</span><br><span class="line">$ git diff --cached/staged [file] 显示暂存区和上一次提交(commit)的差异</span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br></pre></td></tr></table></figure></li>
+<li><p>提交命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m [message]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>message：可以是一些备注信息。</li>
+</ul>
+</li>
+<li><p>回退版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset [--soft | --mixed | --hard] [HEAD]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>mixed：为默认，可以不用带该参数，用于重置暂存区的文件与上一次的提交(commit)保持一致，工作区文件内容保持不变</li>
+<li>soft 参数用于回退到某个版本</li>
+<li>hard 参数撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交</li>
+</ul>
+</li>
+<li><p>分支相关</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">\<span class="comment">#列出本地所有分支</span></span><br><span class="line">git branch</span><br><span class="line">\<span class="comment">#列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line">\<span class="comment">#新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line">\<span class="comment">#新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b 分支名</span><br><span class="line">\<span class="comment">#合并指定分支到当前分支</span></span><br><span class="line">git merge 分支名</span><br><span class="line">\<span class="comment">#删除分支</span></span><br><span class="line">git branch -d 分支名</span><br><span class="line">\<span class="comment">#删除远程分支</span></span><br><span class="line">git push origin --delete 分支名</span><br><span class="line">git branch -dr 分支名</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>提交代码</strong></p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/86324066a24e3eb32af8305f91c0a064582ae9d5.png"></p>
+<p>向Github提交代码的两种情况</p>
+<ol>
+<li><p>本地没有 Git 仓库，将远程仓库clone到本地</p>
+<p> 通过clone命令创建的本地仓库，其本身就是一个 Git 仓库了，不用我们再进行<br> init初始化操作啦，而且自动关联远程仓库。我们只需要在这个仓库进行修改或者<br> 添加等操作，然后commit即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> <span class="string">&quot;仓库地址&quot;</span></span><br><span class="line">$ git push origin main</span><br></pre></td></tr></table></figure></li>
+<li><p>本地有 Git 仓库，并且我们已经进行了多次commit操作</p>
+<p> 进入仓库,关联远程仓库，origin为远程仓库的名字</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin 仓库地址</span><br></pre></td></tr></table></figure>
+
+<p> 同步远程仓库和本地仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin main</span><br></pre></td></tr></table></figure>
+
+<p>强调:在向远程仓库提交代码的时候，一定要先进行pull操作，再进行push操作，防止本地仓库与远程仓库不同步导致冲突的问题，尤其是第二种提交代码的情况，很容易就出现问题。</p>
+</li>
+</ol>
+<p><strong>实际使用</strong></p>
+<p>转载自<a target="_blank" rel="noopener" href="https://blog.csdn.net/nrsc272420199/article/details/85219097">原文</a><br>1.远程仓库只有一个master分支的情况<br>   需要用到的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git pull----------------从远程仓库拉取代码到本地</span><br><span class="line">git stash---------------将你修改后的代码存储到本地(一个栈结构)--&gt;一般会在git pull码失败时使用</span><br><span class="line">git stash pop-----------将你stash到本地的代码与重新git pull下的代码合并</span><br><span class="line">git add XXX-------------将XXX文件加入到暂存区</span><br><span class="line">git commit -m <span class="string">&quot;注释&quot;</span>----将暂存区的文件提交到本地仓库</span><br><span class="line">git push----------------将本地仓库的内容推送到远程仓库</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>实际场景<br>假设开发者A和开发者B都刚刚从远程仓库checkout了一份代码到本地.</li>
+</ol>
+<p>A:<br>首先开发者A在README.md文件中进行了如下修改:</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/3aa70b0531dc3e2625c09c1ef8eac0078a29f54e.png">然后将修改内容按照如下方式提交到远程仓库:<br><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/265bf46b38778fb7476094dda85d00debb635e85.png"></p>
+<p>B:<br> <img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/5a1f2bfbce2c6557b2d3442934c0a92b8a606944.png">  开发者B此时也要开发代码了,正常来讲,如果开发者B在开发完一个功能需要提交代码之前,肯定要git pull一下代码.比如说开发者B在README.md的第三行里增加了一句话,然后他去git pull代码,结果如下:</p>
+<p><strong>★注意点1★–git监控变化的单位是文件</strong><br>   我不知道大家在这里会不会疑惑,反正我疑惑过很久,明明我在Git Bash里改动的是第二行,在Idea里改动的是第三行,不是说git监测的是变化吗?这里怎么就pull不下来呢?其实git所谓的监控变化,监控的单位是文件,也就是说假如其他开发者改动了XXX文件,并且同步到远程库了,你即使在XXX文件里改动了一个标点,加了一个空格,都无法pull成功.<br>   git pull不成功时,你就需要使用git stash命令了,具体解决方式如下:</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/578439ae227066f02d1319f645f09b0567c46bd6.png"></p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/62a3a7a6fbde2da426ced06d782dbd6ee43fb5c4.png"></p>
+<p><strong>★注意点2★–git pull可以把所有你上次push后没操作的文件pull下来</strong><br>A:<br>  接着上面的栗子,假设Git Bash用户同步了服务端的代码,并且在没跟IDEA用户商量的情况下,擅自修改了IDEA用户的代码,如下:</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/2ac963f71072ecd1cc7f56f9153107153b737a36.png"><br><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/c96a2283efc6cc31030410ff42e59ac41209443a.png">  并且Git Bash用户还创建了一个新的文件,如下:</p>
+<p>B:<br>  开发者B如果没有进行开发,或者进行了其他文件的开发,而未对README.md文件进行操作,直接git pull,效果见下图.可以发现,git pull可以把所有你上次push后没操作的文件pull下来,并将你本地的代码变成和远程仓库一样的代码.</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/51204e17ea43f7a1992ea9abbf9ecb48768694fa.png">所以奉在pull代码的时候一定要多注意看一下代码有没有被改动过.</p>
+<p>3.使用idea的Update Project代替git pull + git stash +git stash pop</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/5ea18123f9a50a08ca1fd5562c479b4aa184a2e4.png">然后点击一下OK,就会弹出如下页面:</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/6aa5405ba7ffbe9c8760c5891854c1041e688d10.png">   然后双击一下有冲突的文件之后,就会弹出如下页面,自我感觉在这个界面里进行冲突解决,要比注意点1中第一个图,那种解决方式爽一些.</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/7e1e6ca628c6bcc92afce94e8ce7a0cd9a491ac1.png">并且解决完冲突后,立刻会弹出如下提示:</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/089c68368fd64dc9463fcbb493992b46998e45ad.png">点开提示之后,你就可以看到哪些文件修改了,哪些文件是新增的,而且你肯定会想去看看你原来操作过的文件有没有被updated过,从而避免注意点2中提到的情况.<br><img 16 2023 src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/dfd1bcd4b5e9efbe1d7e8d52c289e292c4bd2b04.png" alt="<img src=" 03 github%e4%bd%bf%e7%94%a8 practice12.png" class title="git图解">"></p>
+<p><strong>git merge 相关</strong></p>
+<ol>
+<li><p>在分支之后未对代码修改</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/c81d9e95a6974e43bb3d62b5ce7029b0c535f29d.png"></p>
+</li>
+<li><p>在分支之对代码修改</p>
+<p><img src="/2023/03/16/Github%E4%BD%BF%E7%94%A8/69a4adad5fa74c60aa7fdd3ac358f9bb718b3b4b.png"></p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/25/videos/" rel="prev" title="冷战历史">
+                  <i class="fa fa-chevron-left"></i> 冷战历史
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/03/20/ET%E6%A1%86%E6%9E%B6%E5%88%9D%E6%AD%A5%E7%90%86%E8%A7%A3/" rel="next" title="ET框架初步理解">
+                  ET框架初步理解 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>简体中文</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="选择语言">
+      
+        <option value="zh-CN" data-href="/2023/03/16/Github%E4%BD%BF%E7%94%A8/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/2023/03/16/Github%E4%BD%BF%E7%94%A8/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Exiaozhang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/exiaozhang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"exiaozhang/exiaozhang.github.io","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js"></script>
+
+</body>
+</html>
