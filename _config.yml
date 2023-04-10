@@ -4,18 +4,18 @@
 
 # Site
 title: Exiaozhang`s Blog
-subtitle: '拖着尸体上大学'
+subtitle: 拖着尸体上大学
 description: 'The bird is a word!!!'
-keywords:
+keywords: 
 author: Exiaozhang
 language:
   - zh-CN
   - en
 timezone: ''
-
+email: 2497179110@qq.com
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://exiaozhang.top
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -99,7 +99,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

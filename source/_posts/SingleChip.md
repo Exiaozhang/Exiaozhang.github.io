@@ -241,7 +241,7 @@ sudo mount -t nfs 192.168.12.123:/nfs /mnt -o nolock
 
 提交即可
 
-### 进阶要求
+## 进阶要求
 
 可以参考我的git的使用
 
