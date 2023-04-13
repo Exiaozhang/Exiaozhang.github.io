@@ -1,7 +1,9 @@
 ---
 title: 嵌入式与单片机实验课答案
 date: 2023-04-02 02:02:14
-tags:
+tags: ['学习']
+top_img: /img/Top_img.jpg
+cover: /img/Cover_SingleChip.png
 ---
 
 # 第一次实验
@@ -223,9 +225,10 @@ sudo /etc/init.d/nfs-kernel-server start
 ```bash
 sudo mount -t nfs 192.168.12.123:/nfs /mnt -o nolock
 #如果挂载成功，在/mnt目录下能看到/nfsroot目录下的内容
+#如果你就一台电脑可以自己挂载自己把 192.168.12.123 改成 127.0.0.1
 ```
 
-截图,把exports复制一份
+**截图,把exports复制一份**
 
 ## 提交
 
@@ -247,4 +250,4 @@ sudo mount -t nfs 192.168.12.123:/nfs /mnt -o nolock
 
 进阶没时间写了,找个其他时间再写
 
-这是我实验二的[文件]([HomeWork_1: 单片机嵌入式作业000000 - Gitee.com](https://gitee.com/Exiaozhang/home-work_1/tree/master/19))包括了进阶要求的文件,可以参考着改改,不会可以线下问我,或者在我的评论区给我留言
+**这是我实验二的[文件](https://gitee.com/Exiaozhang/home-work_1/tree/master/19)包括了进阶要求的文件,可以参考着改改,不会可以线下问我,或者在我的评论区给我留言**

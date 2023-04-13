@@ -1,7 +1,9 @@
 ---
-title: 在Ubuntu中装Node中遇到的坑
+title: 在Ubuntu中装Nodejs中遇到的坑
 date: 2023-04-07 15:21:44
 tags:
+top_img: /img/Top_img.jpg
+cover: /img/Cover_UbuntuNodejs.png
 ---
 
 # 在Ubuntu中装Nodejs
