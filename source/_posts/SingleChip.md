@@ -416,6 +416,8 @@ mkdir 30
 
 ![](SingleChip/2023-04-15-02-00-16-Screenshot%20from%202023-04-15%2001-59-53.png)
 
+### 线程
+
 先在1_pthread的文件夹打开VSCode
 
 ```bash
@@ -481,11 +483,392 @@ make all
 
 ![](SingleChip/2023-04-15-02-15-18-Screenshot%20from%202023-04-15%2002-15-08.png)
 
-依次执行文件并截图
+依次执行文件并截图，后面是理解和解释的运行状态（这个要复制到word里面）
 
 ```bash
 ./1.pthread_create_exit.out
 ```
 
 ![](SingleChip/2023-04-15-02-16-23-Screenshot%20from%202023-04-15%2002-16-14.png)
->>>>>>> Stashed changes
+
+pthread_create()可以创建线程，其代码如下：
+
+```bash
+void *thread_function(void *index)
+e = pthread_create(
+ pthread_t *thread_id,
+ const pthread_attr_t *attr,
+ thread_function,
+ void *index
+);
+```
+
+·thread_id 为所创建线程的id
+
+·attr为线程的属性
+
+·thread_function给所创建的线程附加内容
+
+·index给thread_function函数提供所需要的参数
+
+·值得注意的是，当线程创建成功时，其函数返回值为0，否则，为1。
+
+```bash
+./2.pthread_join.out 
+```
+
+![](SingleChip/2023-04-15-11-31-31-Screenshot%20from%202023-04-15%2011-30-25.png)
+
+线程的连接
+
+pthread_join()函数功能为等待指定线程结束，其放在主线程中目的是等待子线程结束，主线程再继续运行，其代码如下：
+
+```
+pthread_join(pthread_t thread, void **retval)
+```
+
+·thread为一指定的需要等待运行结束的线程
+
+·retval为线程的退出码
+
+```bash
+./3.pthread_attr_init_destroy_getstack-foo_bar.out
+```
+
+![](SingleChip/2023-04-15-11-33-50-Screenshot%20from%202023-04-15%2011-33-24.png) 
+
+属性对象的初始化与销毁
+
+pthread_attr_init()函数用于对线程属性对象的初始化，线程具有属性，在对该结构进行处理之前必须进行初始化，其代码如下：
+
+```c
+int pthread_attr_init(pthread_attr_t *attr)
+```
+
+attr为线程属性结构体的指针变量
+
+线程属性在使用之后就要对其进行销毁，即去初始化，要用到pthread_attr_destroy()函数，其代码如下：
+
+```c
+int pthread_attr_destroy(pthread_attr_t *attr)
+```
+
+```bash
+./4.pthread_mutex.out
+```
+
+![](SingleChip/2023-04-15-11-42-08-Screenshot%20from%202023-04-15%2011-41-49.png)
+
+互斥锁静态与动态初始化及销毁
+
+互斥锁可用于使线程按顺序进行，其中互斥锁的初始化用到pthread_mutex_t mutex以及int pthread_mutex_init()函数，前者可静态初始化互斥锁，后者可动态初始化互斥锁其代码如下：
+
+```c
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER
+int pthread_mutex_init(pthread_mutex_t *restrict mutex,const pthread_mutexattr_t *restrict attr)
+```
+
+·PTHREAD_MUTEX_INITIALIZER为一结构常量
+
+·restrict mutex为新建的互斥锁变量
+
+·restrict attr指定了新建互斥锁的属性
+
+·互斥锁的销毁意味着释放它所占用的资源，且要求锁当前处于开放状态。需要用到pthread_mutex_destroy()函数。由于在Linux中，互斥锁并不占用任何资源，pthread_mutex_destroy()除了检查锁状态以外没有其他动作。其代码如下：
+
+```c
+int pthread_mutex_destroy(pthread_mutex_t *mutex)
+```
+
+mutex为需要销毁的互斥锁变量
+
+```bash
+./5.pthread_dead_lock_of_mutex.out
+```
+
+![](SingleChip/2023-04-15-11-39-49-Screenshot%20from%202023-04-15%2011-39-22.png)
+
+这里通过让两个进程不断争夺运行资源来使程序进入死锁状态。主线程创建了两个子线程pthread_1和pthread_2，p_1、p_2分别获得mutexA和mutexB，由于两个锁都上锁了，无法获得对方的锁，就造成了死锁现象。因为进入了死锁状态，所以不能继续操作了，这里使用了ctrl+z退出死锁状态。
+
+```c
+./6.pthread_conditional_variable.out
+```
+
+![](SingleChip/2023-04-15-11-44-10-Screenshot%20from%202023-04-15%2011-43-09.png)
+
+主线程创建的两个线程会对sum_lock交替上锁，不断地打印，循环：sum++，打印，解锁互斥量，执行if语句的操作，当sum=100时，发送一个唤醒命令到一个条件变量队列等待的线程，后者会在sum大于等于100时，随时有可能接收到来自pthread_cond_signal()函数的唤醒信号使得sum=0，并打印执行信息，但无论如何主线程都会在sum与120个1相加（即前两个创建的子线程所执行的循环中i都为60时）终止线程。
+
+### 进程
+
+打开2_process文件夹内打开VSCode
+
+```bash
+code ~/30/2_process
+```
+
+在VSCode按`Ctrl`+`~`打开终端,先清楚编译后的代码在编译
+
+```bash
+make clean
+make all
+```
+
+**和上面一样挨个运行我就不写了,直接贴图和理解了（理解和图都是要粘贴到Word里面的）**
+
+![](SingleChip/2023-04-15-11-53-47-Screenshot%20from%202023-04-15%2011-53-37.png)
+
+这个没有理解，也写不了
+
+![](SingleChip/2023-04-15-11-57-23-Screenshot%20from%202023-04-15%2011-57-16.png)
+
+这个没有理解，也写不了
+
+![](SingleChip/2023-04-15-11-57-49-Screenshot%20from%202023-04-15%2011-57-42.png)
+
+这里就打印出来了父进程和子进程的pid。父进程的pid是3147，子进程的pid是3148。
+
+![](SingleChip/2023-04-15-11-59-00-Screenshot%20from%202023-04-15%2011-58-53.png)
+
+这个没有理解，也写不了
+
+**第五个要修改一下源代码，如果上边都是按照我的来的话，改成和我一样就行**
+
+修改后的代码
+
+![](SingleChip/2023-04-15-12-12-18-Screenshot%20from%202023-04-15%2012-12-12.png)
+
+```c
+/* 子进程加载新程序 */
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+char *env_init[] = {"USER=ujn", "HOME=/home/ujn/", NULL}; /* 为子进程定义环境变量 */
+int main(int argc, char *argv[]) {
+    pid_t pid;
+    if ((pid = fork()) < 0) { /* 创建进程失败判断 */
+        perror("fork error");
+    } else if (pid == 0) { /* fork 对子进程返回 0 */
+        execle("../../20/hello", "hello", "hello", "world", (char *) 0,env_init);/*子进程装载新程序*/
+        perror("execle error"); /* execle 失败时才执行 */
+        exit(-1);
+    } else {
+        exit(0); /* 父进程退出 */
+    }
+    return -1;
+}
+```
+
+重新编译并运行
+
+```bash
+make all
+./5-execle-example4.out 
+```
+
+![](SingleChip/2023-04-15-12-14-09-Screenshot%20from%202023-04-15%2012-13-51.png)
+
+通过运行结果可知，子进程携带参数执行了另一个程序，输出了对应结果。
+
+![](SingleChip/2023-04-15-12-16-14-Screenshot%20from%202023-04-15%2012-16-02.png)
+
+检测子进程的退出状态
+
+![](SingleChip/2023-04-15-12-18-42-Screenshot%20from%202023-04-15%2012-17-52.png)
+
+创建守护进程并写入时间到文件中
+
+![](SingleChip/2023-04-15-12-19-54-Screenshot%20from%202023-04-15%2012-19-49.png)
+
+按两次ctrl+c可以退出
+
+程序代码利用sigaction函数实现当进程首次收到SIGINT(Ctrl+c)信号时在终端打印Ouch信息，第2次按Ctrl+c时进程退出。
+
+## 提交
+
+**就这样就行了，后边的应该不用运行了把截图和理解粘贴到Word里面直接交上就行了**
+
+# 第五次实验
+
+## 实验要求
+
+![](SingleChip/2023-04-15-13-12-39-Screenshot%20from%202023-04-15%2013-12-17.png)
+
+## 查看编译运行源代码
+
+老样子创建项目此实验的项目文件夹
+
+```bash
+cd ~
+mkdir 40
+```
+
+把这个[上机 040 - tcp-while-neat（简洁示例）.tgz ](https://gitee.com/Exiaozhang/home-work_1/blob/master/PPT_File/%E4%B8%8A%E6%9C%BA%20040%20-%20tcp-while-neat%EF%BC%88%E7%AE%80%E6%B4%81%E7%A4%BA%E4%BE%8B%EF%BC%89.tgz)文件下载解压到这个文件夹，解压后如图
+
+![](SingleChip/2023-04-15-13-19-19-Screenshot%20from%202023-04-15%2013-18-59.png)
+
+这个文件夹内打开VSCode
+
+```bash
+code ~/40/tcp-while-neat
+```
+
+在VSCode新建一个Makefile文件，并输入以下内容
+
+![](SingleChip/2023-04-15-13-21-59-Screenshot%20from%202023-04-15%2013-21-50.png)
+
+打开终端（我上边说过怎么打开），先清除在编译代码
+
+```bash
+make clean
+make all
+```
+
+![](SingleChip/2023-04-15-13-24-10-Screenshot%20from%202023-04-15%2013-23-41.png)
+
+新开一个终端，在一个终端运行server一个运行client，点那个加号
+
+<img src="SingleChip/2023-04-15-13-27-05-Screenshot%20from%202023-04-15%2013-26-52.png" title="" alt="" data-align="center">
+
+```bash
+#开启服务器
+./server-while-tcp.out 
+#开启客户端
+./client.out 127.0.0.1
+```
+
+![](SingleChip/2023-04-15-13-26-17-Screenshot%20from%202023-04-15%2013-25-02.png)
+
+![](SingleChip/2023-04-15-13-26-23-Screenshot%20from%202023-04-15%2013-25-58.png)
+
+在客户端终端输入hello world回车
+
+![](SingleChip/2023-04-15-13-28-48-Screenshot%20from%202023-04-15%2013-28-15.png)
+
+返回服务器终端查看是否受到消息
+
+![](SingleChip/2023-04-15-13-29-23-Screenshot%20from%202023-04-15%2013-28-56.png)
+
+## 修改为多线程代码
+
+打开服务端代码修改一下
+
+![](SingleChip/2023-04-15-14-30-54-Screenshot%20from%202023-04-15%2014-30-27.png)
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+#include <netdb.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <pthread.h>
+
+#define portnumber 3333
+
+void *Async_ReceiveMessage(void *clientSocket)
+{
+    int server_session_socket = (int)clientSocket;
+    int read_got_bytes_nr;
+    char buffer[1024];
+
+    if ((read_got_bytes_nr = read(server_session_socket, buffer, 1024)) == -1)
+    {
+        fprintf(stderr, "ERR read():%s\n", strerror(errno));
+        exit(1);
+    }
+    buffer[read_got_bytes_nr] = '\0';
+    printf("Server received %s\n", buffer); /* 这个对话服务已经结束 */
+    close(server_session_socket);            /* 下一个 */
+}
+
+int main(int argc, char *argv[])
+{
+    int local_listen_socket, server_session_socket;
+    struct sockaddr_in server_addr_info_struct;
+    struct sockaddr_in client_addr_info_struct;
+    int size_of_sockaddr_in;
+    int read_got_bytes_nr;
+
+    char buffer[1024];
+    pthread_t ids[5];
+    long t = 0;
+
+    /* socket: 服务器端开始建立sockfd描述符 */
+    if ((local_listen_socket = socket(AF_INET, SOCK_STREAM, 0)) == -1)
+    { // AF_INET i.e. IPV4; SOCK_STREAM i.e. TCP
+        fprintf(stderr, "Socket error:%s\n\a", strerror(errno));
+        exit(1);
+    }
+
+    /* 准备 sockaddr结构及其内部IP、端口信息 */
+    bzero(&server_addr_info_struct, sizeof(struct sockaddr_in)); // 初始化,置0
+    server_addr_info_struct.sin_family = AF_INET;                 // Internet
+    server_addr_info_struct.sin_addr.s_addr = htonl(INADDR_ANY); // 将本机host上的long数据转化为网络上的long数据，使服务器程序能运行在不同CPU的主机上
+                                                                 // INADDR_ANY 表示主机监听任意/所有IP地址。
+    // server_addr_info_struct.sin_addr.s_addr=inet_addr("192.168.1.1");  //用于绑定到一个固定IP,inet_addr用于把数字加格式的ip转化为整形ip
+    server_addr_info_struct.sin_port = htons(portnumber); // (将本机器上的short数据转化为网络上的short数据)端口号
+
+    /* bind: 绑定sockfd描述符 和 IP、端口 */
+    if (bind(local_listen_socket, (struct sockaddr *)(&server_addr_info_struct), sizeof(struct sockaddr)) == -1)
+    {
+        fprintf(stderr, "ERR bind():%s\n\a", strerror(errno));
+        exit(1);
+    }
+
+    /* 设置允许连接的最大客户端数 */
+    if (listen(local_listen_socket, 5) == -1)
+    {
+        fprintf(stderr, "ERR listen():%s\n\a", strerror(errno));
+        exit(1);
+    }
+
+    while (1)
+    {
+        size_of_sockaddr_in = sizeof(struct sockaddr_in);
+        fprintf(stderr, "Listening & Accepting...\n");
+        if ((server_session_socket = accept(local_listen_socket, (struct sockaddr *)(&client_addr_info_struct), &size_of_sockaddr_in)) == -1)
+        { // 服务器阻塞, 直到接受到客户连接
+            fprintf(stderr, "ERR accept():%s\n\a", strerror(errno));
+            exit(1);
+        }
+
+        pthread_create(&ids[t], NULL, Async_ReceiveMessage, server_session_socket);
+    }
+
+    /* 结束通讯 */
+    close(local_listen_socket);
+    exit(0);
+}
+```
+
+修改后重新编译代码
+
+```bash
+make all
+```
+
+Split三个终端(在终端里面按住`Ctrl`+`Shift`+`5`)
+
+![](SingleChip/2023-04-15-14-34-39-Screenshot%20from%202023-04-15%2014-34-22.png)
+
+在一个终端运行服务器，另两个运行客户端,查看是否三连接一个客户端还能继续连接其他客户端
+
+```bash
+#服务端
+./server-while-tcp.out
+
+客户端
+./client.out 127.0.0.1
+```
+
+![](SingleChip/2023-04-15-14-37-46-Screenshot%20from%202023-04-15%2014-37-36.png)
+
+![](SingleChip/2023-04-15-14-38-52-Screenshot%20from%202023-04-15%2014-38-44.png)
+
+## 提交文件
+
+随便写写就行了，这是我的[文件](https://gitee.com/Exiaozhang/home-work_1/tree/d96e5afe0ca09d395114fa0526366f8e0c59b01a/40/tcp-while-neat),压缩包我是把代码压缩上传了，他也没有说压缩包里要什么
