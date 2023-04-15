@@ -250,4 +250,242 @@ sudo mount -t nfs 192.168.12.123:/nfs /mnt -o nolock
 
 进阶没时间写了,找个其他时间再写
 
+<<<<<<< Updated upstream
 **这是我实验二的[文件](https://gitee.com/Exiaozhang/home-work_1/tree/master/19)包括了进阶要求的文件,可以参考着改改,不会可以线下问我,或者在我的评论区给我留言**
+=======
+这是我实验二的[文件]([HomeWork_1: 单片机嵌入式作业000000 - Gitee.com](https://gitee.com/Exiaozhang/home-work_1/tree/master/19))包括了进阶要求的文件,可以参考着改改,不会可以线下问我,或者在我的评论区给我留言
+
+# 第三次实验
+
+## 实验要求
+
+![](SingleChip/2023-04-14-22-57-14-Screenshot%20from%202023-04-14%2022-56-57.png)
+
+## 配置和安装VSCode
+
+以下内容我都是在VSCode上完成的，虽然说不在VSCode上做也能完成，为了方便，我教以下怎么安装配置VSCode，方便以后的实验
+
+进入[官网](https://code.visualstudio.com/)
+
+Ubuntu点击下载.deb格式的安装包
+
+![Screenshot from 2023-04-14 23-04-33.png](SingleChip/2f2a5ddf4ba91372b6ff9df6f8ee7ac110f247a2.png)
+
+下载完成后,在下载的文件里面右键，打开终端
+
+<img title="" src="SingleChip/2023-04-14-23-06-42-Screenshot%20from%202023-04-14%2023-06-35.png" alt="" width="505">
+
+执行命令
+
+```bash
+#注意你的安装包的名字可能因为版本不同和我不一样
+sudo apt install ./code_1.77.3-1681292746_amd64.deb 
+```
+
+安装完成后进入VSCode,进入扩展，搜索拓展
+
+> C/C++
+> 
+> Makefile Tools
+
+安装上即可
+
+<img title="" src="SingleChip/2023-04-14-23-11-54-Screenshot%20from%202023-04-14%2023-11-20.png" alt="" width="221">
+
+## C编程调试
+
+在用户目录创建本实验项目的文件夹并打开VSCode
+
+```bash
+cd ~
+mkdir 20
+code .
+```
+
+在VSCode中新建一个hello.c文件
+
+![Screenshot from 2023-04-14 23-15-21.png](SingleChip/d646b7e7fffae32484016a9ead05a2ffe251f2d2.png)
+
+输入
+
+![](SingleChip/2023-04-14-23-16-22-Screenshot%20from%202023-04-14%2023-16-08.png)
+
+在VSCode按下`Ctrl`+`～` 打开终端中依次执行并查看运行结果
+
+```bash
+gcc –E hello.c –o hello.i
+gcc –S hello.i –o hello.s
+gcc –c hello.s –o hello.o
+gcc hello.o –o hello
+```
+
+![](SingleChip/2023-04-14-23-37-19-Screenshot%20from%202023-04-14%2018-05-02.png)
+
+### 使用gdb调试
+
+生成可调试的可执行文件
+
+```bash
+gcc -g -Wall hello.c -o hello_dbg.o
+```
+
+![](SingleChip/2023-04-14-23-22-29-Screenshot%20from%202023-04-14%2018-06-22.png)
+
+开始调试
+
+```bash
+gdb ./hello_dbg.o
+```
+
+![](SingleChip/2023-04-14-23-23-20-Screenshot%20from%202023-04-14%2018-06-28.png)
+
+至少设置一个被调用函数内的断点并暂停（截图包括 list、break和print 被调用函数内变量，能看出是被调用函数内暂停）
+
+```bash
+#以下语句在gdb里面按顺序执行
+list 
+b 7
+run
+print a
+c
+q
+```
+
+![](SingleChip/2023-04-14-23-29-13-Screenshot%20from%202023-04-14%2018-06-51.png)
+
+![](SingleChip/2023-04-14-23-29-20-Screenshot%20from%202023-04-14%2018-07-09.png)
+
+![](SingleChip/2023-04-14-23-29-27-Screenshot%20from%202023-04-14%2021-49-34.png)
+
+![](SingleChip/2023-04-14-23-29-32-Screenshot%20from%202023-04-14%2023-27-06.png)
+
+![](SingleChip/2023-04-14-23-29-44-Screenshot%20from%202023-04-14%2021-49-46.png)
+
+### gcc改为makefile
+
+vscode新建一个Makefile文件写入
+
+```
+CC = gcc
+CFLAGS = -g
+OUTS = hello.out
+
+all: ${OUTS}
+
+%.out: %.c
+    $(CC) -o $@ $^
+
+clean:
+    @rm -vf *.o *~ ${OUTS}
+```
+
+![](SingleChip/2023-04-14-23-32-58-Screenshot%20from%202023-04-14%2022-49-12.png)
+
+使用make编译并运行
+
+```bash
+make all
+
+./hello.out
+```
+
+![](SingleChip/2023-04-14-23-34-32-Screenshot%20from%202023-04-14%2022-49-35.png)
+
+## 提交文件
+
+word文档里面就是自己做了什么和截图，压缩包里面可能就是Makefile的文件把，我也不清楚，我就这样交上去的，他没说压缩包里面要有什么
+
+# 第四次实验
+
+## 实验要求
+
+![](SingleChip/2023-04-15-01-35-32-Screenshot%20from%202023-04-15%2001-35-04.png)
+
+我感觉这个实验很水，把每次实验结果截图就行
+
+## 查看编译运行源代码
+
+创建本次实验项目文件夹
+
+```bash
+cd ~
+mkdir 30
+```
+
+把下载[文件](https://gitee.com/Exiaozhang/home-work_1/tree/master/PPT_File)你可以用的方式，把文件解压到30这个文件
+
+![](SingleChip/2023-04-15-02-00-16-Screenshot%20from%202023-04-15%2001-59-53.png)
+
+先在1_pthread的文件夹打开VSCode
+
+```bash
+code ~/30/1_pthread
+```
+
+**使用自己的变量重命名**（这个我觉得应该随便改改就行）
+
+![](SingleChip/2023-04-15-02-04-59-Screenshot%20from%202023-04-15%2002-04-49.png)
+
+随便改个名字就行，例如把上边`1.pthread_create_exit.c`中的`returned_code_err`改为`returned_code_wrong`改成这样
+
+![](SingleChip/2023-04-15-02-08-17-Screenshot%20from%202023-04-15%2002-07-59.png)
+
+```c
+/*  线程的创建与终止 ：  */
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#define NUM_THREADS 5
+
+void *thread_function(void *index) { /* 线程函数 */
+    long tid;
+    tid = (long) index;
+    printf("Hello World! This is thread #%ld!\n", tid); /* 打印线程对应的参数 */
+    pthread_exit(NULL);    /* 退出线程 */
+}
+
+int main(int argc, char *argv[]) {
+    pthread_t tid_array[NUM_THREADS];
+    int returned_code_wrong;
+    long index;
+    for (index = 0; index < NUM_THREADS; index++) { /* 循环创建 5 个线程 */
+        printf("In main: creating thread %ld.\n", index);
+        returned_code_wrong = pthread_create(
+            &tid_array[index], 
+            NULL, 
+            thread_function, 
+            (void *) index
+        ); /* 创建线程 */
+        if (returned_code_wrong) {
+            printf("ERR: return code from pthread_create() is not 0, but %d\n", returned_code_wrong);
+            exit(-1);
+        }
+    }
+    printf("Main exits.\n");
+    pthread_exit(NULL); /* 主线程退出 */
+    return 0;
+}
+```
+
+先清除以前编译的文件后编译代码在VSCode按下`Ctrl`+`～` 打开终端
+
+```bash
+make clean
+```
+
+![](SingleChip/2023-04-15-02-14-47-Screenshot%20from%202023-04-15%2002-14-32.png)
+
+```bash
+make all
+```
+
+![](SingleChip/2023-04-15-02-15-18-Screenshot%20from%202023-04-15%2002-15-08.png)
+
+依次执行文件并截图
+
+```bash
+./1.pthread_create_exit.out
+```
+
+![](SingleChip/2023-04-15-02-16-23-Screenshot%20from%202023-04-15%2002-16-14.png)
+>>>>>>> Stashed changes
