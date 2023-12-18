@@ -299,7 +299,7 @@ sudo apt install ./code_1.77.3-1681292746_amd64.deb
 ```bash
 cd ~
 mkdir 20
-code .
+code ~/20
 ```
 
 在VSCode中新建一个hello.c文件
