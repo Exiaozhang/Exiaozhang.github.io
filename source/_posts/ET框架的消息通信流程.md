@@ -12,6 +12,34 @@ Session是会话，比如打电话，从拨号到挂断这就是一个Session
 
 Channel是通道,我的理解是比如打电话时，Channel表示是使用联通信号或者是移动信号或者是电信信号  
 
+## 创建一个Channel(以TCP为例)
+
+设置包体长度为service中的包体长度->通过service.MemoryStreamManager.GetStream设置memoryStream->创建Socket->创建PacketParser->设置SocktArgs innArgs/outArgs的回调函数，用于处理信息->设置连接和发送状态
+
+```csharp
+public TChannel(IPEndPoint ipEndPoint, TService service): base(service, ChannelType.Connect)
+```
+
+
+
+## 创建一个Session
+
+得到Game.Scene.NetInnerComponent/NetOuterComponent组件调用Get函数
+
+### NetInnerComponent/NetOuterComponent的Get函数
+
+```csharp
+public Session Get(IPEndPoint ipEndPoint){}
+```
+
+首先会判断是是否有缓存的Sesssion->根据address连到并得到NetInnerComponent上对应的Channel->通过ComponentFactory使用channel作为参数创建Session
+
+## Session的初始化流程
+
+将Session的channel赋值参数中的channel->清空requestCallback字典(用于调用Request信息时,给awiat提供Result)->给channel设置ErrorCall(Request出现错误,会移除Session)->设置channel.ReadCallback为OnRead函数(接收信息时读取信息)
+
+## Session发送一个消息
+
 ### Session的Send函数
 
 ```csharp
@@ -50,4 +78,4 @@ public void StartSend()
 
 ## Channel的StartSend函数
 
-判断连接状态->判断消息是否为空->设置发送状态->
+判断连接状态->判断消息是否为空->设置发送状态->设置SocketAsyncEventArgs的Buffer->socket异步发送SocketAsyncEventArgs
